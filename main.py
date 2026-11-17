@@ -109,10 +109,9 @@ def pick(fn,L):
  lg=[m for m in p.moves() if not p.move(m).kcap()]
  if not lg:return L[0]
  lg.sort(key=p.val,reverse=True)
- n=[0]
  best,bv=lg[0],-10**9
  for m in lg:
-  v=-search(p.move(m),3,-10**9,10**9,n,30000)
+  v=-search(p.move(m),3,-10**9,10**9,[0],4000)
   if v>bv:bv,best=v,m
  u=tu(best,wp)
  return u if u in L else L[0]
