@@ -111,7 +111,7 @@ def pick(fn,L):
  lg.sort(key=p.val,reverse=True)
  best,bv=lg[0],-10**9
  for m in lg:
-  v=-search(p.move(m),3,-10**9,10**9,[0],4000)
+  v=-search(p.move(m),3,-10**9,10**9,[0],10000)
   if v>bv:bv,best=v,m
  u=tu(best,wp)
  return u if u in L else L[0]
